@@ -60,6 +60,27 @@
 /* Performance */
 #services,.statement,.workStrip,#serve,#rate,.contact{content-visibility:auto;contain-intrinsic-size:1px 900px}
 @media(max-width:640px){#services,.statement,.workStrip,#serve,#rate,.contact{contain-intrinsic-size:1px 1200px}}
+
+/* Service request / dual-text form */
+.requestSection{padding:110px 0;border-top:1px solid var(--line);position:relative;overflow:hidden}
+.requestSection:before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(88,255,22,.11),transparent 67%);right:-220px;top:-140px;pointer-events:none}
+.requestGrid{display:grid;grid-template-columns:.82fr 1.18fr;gap:52px;align-items:start}
+.requestEyebrow{color:var(--green);font-size:12px;font-weight:900;letter-spacing:.2em;text-transform:uppercase;margin-bottom:16px}
+.requestTitle{font-size:clamp(42px,6vw,84px);line-height:.92;letter-spacing:-.055em;margin:0 0 22px;max-width:720px}
+.requestCopy{color:var(--muted);font-size:18px;line-height:1.65;max-width:560px}
+.requestNote{margin-top:26px;padding:18px 20px;border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.025);color:#b8b8b8;font-size:14px;line-height:1.5}
+.requestForm{border:1px solid var(--line);border-radius:28px;padding:28px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));box-shadow:0 30px 80px rgba(0,0,0,.28);position:relative}
+.formRow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{margin-bottom:14px}
+.field label{display:block;color:#d8d8d8;font-size:12px;font-weight:850;letter-spacing:.08em;text-transform:uppercase;margin:0 0 8px}
+.field input,.field select,.field textarea{width:100%;box-sizing:border-box;border:1px solid rgba(255,255,255,.13);background:#0c0f0b;color:#fff;border-radius:14px;padding:15px 16px;font:inherit;outline:none;transition:.2s border-color,.2s box-shadow}
+.field textarea{min-height:118px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:rgba(88,255,22,.7);box-shadow:0 0 0 3px rgba(88,255,22,.08)}
+.field select{appearance:auto}
+.formSubmit{width:100%;border:0;border-radius:999px;padding:17px 20px;background:var(--green);color:#071004;font-weight:950;font-size:16px;cursor:pointer;margin-top:4px}
+.formMicro{font-size:12px;color:#777;text-align:center;margin:12px 0 0;line-height:1.45}
+@media(max-width:800px){.requestSection{padding:78px 0}.requestGrid{grid-template-columns:1fr;gap:30px}.requestTitle{font-size:48px}.requestCopy{font-size:16px}.requestForm{padding:18px;border-radius:22px}.formRow{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -102,7 +123,69 @@
 <article class="aud reveal"><img src="https://images.unsplash.com/photo-1594771804886-a933bb2d609b?q=52&auto=format&fit=crop&w=900" decoding="async" loading="lazy" fetchpriority="low" alt="Farm tractor and heavy equipment"><div class="audShade"></div><div class="huge">03</div><div class="audCopy"><h3>Farm & Heavy Duty</h3><p>Agricultural and construction equipment serviced where it works — in the field, yard or jobsite.</p></div></article>
 </div></section>
 <section class="shell section" id="rate"><div class="rate reveal"><div class="rateCopy"><div class="kicker">03 / Straightforward rates</div><h2>No surprise shop fees.</h2><p>Honest hourly pricing for mobile, on-site preventative maintenance and repair. Call for availability and tell us what you’re working with.</p><div style="margin-top:28px"><a class="pill magnetic" href="tel:2107699064">Talk to Felipe ↗</a></div></div><div class="rateVisual"><img src="https://images.unsplash.com/photo-1582586420444-9851313581b8?q=52&auto=format&fit=crop&w=900" decoding="async" loading="lazy" fetchpriority="low" alt="Diesel mechanic servicing a truck"><div class="priceBadge"><strong>$135</strong><span>per hour · mobile service</span></div></div></div></section>
-<section class="shell contact" id="contact"><div class="contactBox reveal"><img class="contactPhoto" src="https://images.unsplash.com/photo-1720811559371-7b0ebd219127?q=52&auto=format&fit=crop&w=900" decoding="async" loading="lazy" fetchpriority="low" alt="Truck and trailer ready for service"><div class="contactShade"></div><div class="contactInner"><div class="kicker">San Antonio, Texas + surrounding areas</div><h2>Need it fixed where it sits?</h2><div class="contacts"><a class="contactLink magnetic" href="tel:2107699064">Felipe Cruz · (210) 769-9064 ↗</a><a class="contactLink magnetic" href="tel:2107699061">John Cruz · (210) 769-9061 ↗</a></div></div></div><footer class="foot"><b>A&F DIESEL SERVICES</b><span>Mobile diesel repair · San Antonio, Texas</span><span>© 2026 A&F Diesel Services</span></footer></section>
+<section class="shell contact" id="contact"><div class="contactBox reveal"><img class="contactPhoto" src="https://images.unsplash.com/photo-1720811559371-7b0ebd219127?q=52&auto=format&fit=crop&w=900" decoding="async" loading="lazy" fetchpriority="low" alt="Truck and trailer ready for service"><div class="contactShade"></div><div class="contactInner"><div class="kicker">San Antonio, Texas + surrounding areas</div><h2>Need it fixed where it sits?</h2><div class="contacts"><a class="contactLink magnetic" href="tel:2107699064">Felipe Cruz · (210) 769-9064 ↗</a><a class="contactLink magnetic" href="tel:2107699061">John Cruz · (210) 769-9061 ↗</a></div></div></div>
+<section class="requestSection" id="request-service">
+  <div class="wrap requestGrid">
+    <div>
+      <div class="requestEyebrow">Request Service</div>
+      <h2 class="requestTitle">Tell us what’s going on.</h2>
+      <p class="requestCopy">Send A&amp;F the details before you call. Add the truck or equipment, location and what it’s doing so Felipe and John can see what you need.</p>
+      <div class="requestNote">Submitting opens a pre-filled group text to <strong>Felipe Cruz · (210) 769-9064</strong> and <strong>John Cruz · (210) 769-9061</strong>. You review the message, then tap Send.</div>
+    </div>
+
+    <form class="requestForm" id="serviceRequestForm">
+      <div class="formRow">
+        <div class="field">
+          <label for="reqName">Your name</label>
+          <input id="reqName" name="name" autocomplete="name" required placeholder="Name">
+        </div>
+        <div class="field">
+          <label for="reqPhone">Phone number</label>
+          <input id="reqPhone" name="phone" type="tel" autocomplete="tel" required placeholder="(210) 555-0000">
+        </div>
+      </div>
+      <div class="field">
+        <label for="reqLocation">Service location</label>
+        <input id="reqLocation" name="location" autocomplete="street-address" required placeholder="Address, city or current location">
+      </div>
+      <div class="formRow">
+        <div class="field">
+          <label for="reqVehicle">Truck / equipment</label>
+          <input id="reqVehicle" name="vehicle" required placeholder="Year, make, model">
+        </div>
+        <div class="field">
+          <label for="reqService">Service needed</label>
+          <select id="reqService" name="service" required>
+            <option value="">Choose service</option>
+            <option>Preventative Maintenance</option>
+            <option>Hydraulic Diagnostic & Repair</option>
+            <option>Electrical Troubleshooting</option>
+            <option>Computer Diagnostics</option>
+            <option>DPF Regen & Repair</option>
+            <option>Heavy Duty / Farm / Ranch</option>
+            <option>Over the Road Repair</option>
+            <option>Fleet Maintenance</option>
+            <option>Brake Repair</option>
+            <option>Tires & Suspension</option>
+            <option>Minor Trailer Repair</option>
+            <option>A/C Diagnostic & Recharge</option>
+            <option>Charging System Repair</option>
+            <option>Coolant System</option>
+            <option>Other / Not Sure</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="reqIssue">What’s happening?</label>
+        <textarea id="reqIssue" name="issue" required placeholder="Describe the problem, warning lights, noises, leaks, or work needed"></textarea>
+      </div>
+      <button class="formSubmit magnetic" type="submit">Text Felipe + John ↗</button>
+      <p class="formMicro">No account or login needed. Your phone’s Messages app will open with the request filled in.</p>
+    </form>
+  </div>
+</section>
+
+<footer class="foot"><b>A&F DIESEL SERVICES</b><span>Mobile diesel repair · San Antonio, Texas</span><span>© 2026 A&F Diesel Services</span></footer></section>
 </main>
 <script>
 const pre=document.getElementById('preloader');const dismissPre=()=>setTimeout(()=>pre.classList.add('done'),180);if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',dismissPre,{once:true})}else{dismissPre()}setTimeout(()=>pre.classList.add('done'),700);
@@ -113,4 +196,32 @@ const hp=document.getElementById('heroPhoto');addEventListener('scroll',()=>{if(
 document.querySelectorAll('.tilt').forEach(card=>{card.addEventListener('mousemove',e=>{if(innerWidth<800)return;let r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform=`perspective(900px) rotateX(${-y*3}deg) rotateY(${x*4}deg) translateY(-3px)`});card.addEventListener('mouseleave',()=>card.style.transform='')});
 document.querySelectorAll('.magnetic').forEach(b=>{b.addEventListener('mousemove',e=>{if(innerWidth<800)return;let r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.08}px,${(e.clientY-r.top-r.height/2)*.08}px)`});b.addEventListener('mouseleave',()=>b.style.transform='')});
 </script>
+
+<script>
+(function(){
+  const form = document.getElementById('serviceRequestForm');
+  if(!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    const v = id => document.getElementById(id).value.trim();
+    const body =
+`A&F DIESEL SERVICE REQUEST
+
+Name: ${v('reqName')}
+Phone: ${v('reqPhone')}
+Location: ${v('reqLocation')}
+Truck/Equipment: ${v('reqVehicle')}
+Service: ${v('reqService')}
+
+Issue:
+${v('reqIssue')}`;
+
+    const recipients = '2107699064,2107699061';
+    const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    const separator = isiOS ? '&' : '?';
+    window.location.href = `sms:${recipients}${separator}body=${encodeURIComponent(body)}`;
+  });
+})();
+</script>
+
 </body></html>
